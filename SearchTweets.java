@@ -8,7 +8,7 @@ public class SearchTweets {
 	
 	//Twitter streaming function
 	public void streamTweets() {
-		ConfigurationBuilder cb = new ConfigurationBuilder();
+	ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true);
         cb.setOAuthConsumerKey("UYleS1XoOv2FWdRK1wC5KGGOu");
         cb.setOAuthConsumerSecret("A2cgxJoqilO8TdaLV9BYcngeIRbiHYjgYUtFh2lUtv2lEU056M");
