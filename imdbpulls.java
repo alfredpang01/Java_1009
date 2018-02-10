@@ -6,7 +6,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 public class imdbpulls {
-
+    public static String movies[] = new String[10];
 
     public static void parse() throws IOException {
         String mov = "charlie and the";
@@ -41,15 +41,19 @@ public class imdbpulls {
                 .userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36")
                 .get();
         Elements links2 = doc.select("movie[title]");
+
         for (Element element : links2) {
 
-            System.out.println(element.attr("title"));
-            System.out.println(element.attr("rated"));
-            System.out.println(element.attr("runtime"));
-            System.out.println(element.attr("genre"));
-            System.out.println(element.attr("released"));
-            System.out.println(element.attr("plot"));
-            System.out.println(element.attr("poster"));
+
+
+            movies[0] = element.attr("title");
+            movies[1] = element.attr("rated");
+            movies[2] = element.attr("runtime");
+            movies[3] = element.attr("genre");
+            movies[4] = element.attr("released");
+            movies[5] = element.attr("plot");
+            movies[6] = element.attr("imdbRating");
+            movies[7] = element.attr("poster");
             //array[i] = (element.absUrl("href")); //<-------HERE*****
             //i++;
 
@@ -65,14 +69,15 @@ public class imdbpulls {
 
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         // TODO Auto-generated method stub
         try {
             parse();
+
 
         } catch (Exception e){
             System.out.println("Exception found!");
             e.printStackTrace();
         }
-    }
+    }*/
 }
